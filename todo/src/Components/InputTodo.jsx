@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react'
 import './CSS files/Inputtodo.css';
 import { GlobalData } from './Context';
+import { MdAddCircle } from "react-icons/md";
+
 
 const InputTodo = () => {
   const { setTodolist, todolist, setInputVal, inputVal, toggle,id,setToggle,setId } = useContext(GlobalData)
@@ -34,7 +36,7 @@ const InputTodo = () => {
             setDisable(true)
           }
         }} />
-        <button disabled={disable} onClick={()=> Addtodo()}>Add</button>
+        <button disabled={disable} onClick={()=> Addtodo()}><MdAddCircle/></button>
       </div>
     </div>
   )

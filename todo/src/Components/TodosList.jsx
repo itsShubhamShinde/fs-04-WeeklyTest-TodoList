@@ -1,6 +1,8 @@
 import React, { useContext} from 'react'
 import { GlobalData } from './Context';
 import './CSS files/TodosList.css'
+import { MdDelete, MdAddCircle } from "react-icons/md";
+import { AiFillEdit } from "react-icons/ai";
 const TodosList = () => {
     const { todolist, setTodolist, setInputVal,setId, setToggle } = useContext(GlobalData)
     const Deletefun = (id) => {
@@ -27,10 +29,11 @@ const TodosList = () => {
                             <button onClick={()=>{
                                 Editfun(ele.key)
                                 setToggle(false)
-                            }}>edit</button>
+                            }}><AiFillEdit/></button>
+                            
                             <button onClick={() => {
                                 Deletefun(ele.key)
-                            }}>Del</button>
+                            }}><MdDelete/></button>
                         </div>
                     })
                     :
